@@ -1,2 +1,2 @@
 # data-structures-and-algorithms
-While everyone talking about coding with AI tools, let's remind some DSA concepts for our younger friends. 
+While everyone talking about coding with AI tools, let's remind some fundamental DSAs for our younger developer friends...
