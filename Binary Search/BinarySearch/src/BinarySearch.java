@@ -67,8 +67,10 @@ public class BinarySearch {
             if (numbers[mid] == target) {
                 return mid;
             } else if (numbers[mid] < target) {
+                // recursive approach instead of iterating a loop
                 return binarySearchv2(numbers, target, mid + 1, right);
             } else {
+                // recursive approach instead of iterating a loop
                 return binarySearchv2(numbers, target, left, mid - 1);
             }
         }
