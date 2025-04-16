@@ -9,6 +9,7 @@ public class BinarySearch {
         // the target element you are looking for...
         int target = 15;
 
+        // Binary Search v1
         int result = binarySearch(numbers, target);
 
         if (result != -1) {
@@ -17,6 +18,17 @@ public class BinarySearch {
             System.out.println("Target not found");
         }
 
+        // Binary Search v2 call
+        int left = 0;
+        int right = numbers.length - 1;
+        int target2 = 18;
+        int result2 = binarySearchv2(numbers, target2, left, right);
+
+        if (result2 != -1) {
+            System.out.println("Target found at index: " + result2);
+        } else {
+            System.out.println("Target not found");
+        }
     }
 
     private static int binarySearch(int[] numbers, int target) {
@@ -40,6 +52,24 @@ public class BinarySearch {
             } else {
                 // if your middle index is beyond the target shift ending index by -1
                 right = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    // this is the second way for the binary search
+    private static int binarySearchv2(int[] numbers, int target, int left, int right) {
+
+        if (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (numbers[mid] == target) {
+                return mid;
+            } else if (numbers[mid] < target) {
+                return binarySearchv2(numbers, target, mid + 1, right);
+            } else {
+                return binarySearchv2(numbers, target, left, mid - 1);
             }
         }
 
